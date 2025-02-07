@@ -3,8 +3,11 @@
 
 // Include functions
 include_once 'constants.php';
+include_once 'functions/bad_request.php';
 include_once 'functions/echo_input.php';
 include_once 'functions/send_response.php';
+include_once 'functions/route_requests.php';
+include_once 'functions/whoami.php';
 
 // Grab the JSON input stream from Telegram, convert it to an object
 // Возьмите входной поток JSON из Telegram, преобразуйте его в объект
@@ -21,7 +24,7 @@ $update->post_fields = array();
 $update->post_fields[0] = new \stdClass();
 
 // Do the thing
-echo_input($update);
+route_requests($update);
 
 // Send it all to Telegram's servers using HTTP POST
 send_response($update);
