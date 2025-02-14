@@ -15,6 +15,6 @@ function whoami($update) {
     $user_id = $update->message->from->id;
 
     $update->post_fields[0]->text = 
-    "Hello $firstname $lastname!\n
+    "Hello $firstname $lastname!
     Your username is $username and your user ID is $user_id.";
 }

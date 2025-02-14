@@ -24,6 +24,7 @@ $update->post_fields = array();
 $update->post_fields[0] = new \stdClass();
 
 // Do the thing
+// Основная функция, вызывает другие функции
 route_requests($update);
 
 // Send it all to Telegram's servers using HTTP POST
