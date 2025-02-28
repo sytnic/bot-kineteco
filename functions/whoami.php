@@ -16,5 +16,6 @@ function whoami($update) {
 
     $update->post_fields[0]->text = 
     "Hello $firstname $lastname!
-    Your username is $username and your user ID is $user_id.";
+Your username is $username and your user ID is $user_id.";
+
 }
