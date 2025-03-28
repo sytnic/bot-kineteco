@@ -22,6 +22,10 @@ function route_requests($update) {
         echo_input($update);
         break;
 
+      case ('/gethelp');
+        perform_help($update);
+        break;
+
       default:
         bad_request($update);
         break;
