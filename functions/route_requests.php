@@ -30,9 +30,17 @@ function route_requests($update) {
         bad_request($update);
         break;
     }
-    // если бот-команда не найдена
+    // инчае, если бот-команда не найдена
   } else {
-    // выдаёт весь объект $update целиком
-    perform_text($update);
+    // если это ответ reply,
+    // выполнить функцию ответа
+    if (isset($update->message->reply_to_message)) {
+        perform_reply($update);
+    // иначе    
+    } else {
+        // выдаёт весь объект $update целиком
+        perform_text($update);
+    }
+    
   }
 }

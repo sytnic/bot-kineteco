@@ -6,6 +6,7 @@ include_once 'constants.php';
 include_once 'functions/bad_request.php';
 include_once 'functions/echo_input.php';
 include_once 'functions/perform_help.php';
+include_once 'functions/perform_reply.php';
 include_once 'functions/perform_text.php';
 include_once 'functions/send_response.php';
 include_once 'functions/route_requests.php';

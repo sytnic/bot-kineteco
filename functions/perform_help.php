@@ -7,9 +7,8 @@ function perform_help($update) {
   // Возвращаемый текст
   $update->post_fields[0]->text = 'What kind of help would you like? Type "tech", "billing", or "other".';
   
-  /*
   $update->post_fields[0]->reply_markup = json_encode(array(
     'force_reply' => TRUE,
   ));
-  */
+  
 }
