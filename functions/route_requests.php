@@ -5,12 +5,13 @@ function route_requests($update) {
 // и на выходе раскладывает слова, относящиеся к команде и обычной строке,
 // по разным массивам command[] и parameters[]. 
 
-  // если найдена бот-команда, то использовать код команды (функции)
+  // если найдена бот-команда, 
   if (isset($update->message->entities[0]) && $update->message->entities[0]->type == 'bot_command') {
     $update->parameters = array();
     $update->command[0] = substr($update->message->text, 0, $update->message->entities[0]->length);
     $update->parameters[0] = substr($update->message->text, $update->message->entities[0]->length+1);
     
+    // то использовать соответствующий команде код (функцию)
     switch ($update->command[0]) {
       // выдаёт данные о тебе
       case ('/whoami'):
@@ -22,6 +23,7 @@ function route_requests($update) {
         echo_input($update);
         break;
 
+      // запускаем функцию
       case ('/gethelp');
         perform_help($update);
         break;
@@ -30,15 +32,15 @@ function route_requests($update) {
         bad_request($update);
         break;
     }
-    // инчае, если бот-команда не найдена
+    // иначе, если бот-команда не найдена
   } else {
-    // если это ответ reply,
-    // выполнить функцию ответа
+    // если это был ответ(reply) пользователя на запрос бота,
+    // то выполнить функцию ответа
     if (isset($update->message->reply_to_message)) {
         perform_reply($update);
     // иначе    
     } else {
-        // выдаёт весь объект $update целиком
+        // выдать весь объект $update целиком
         perform_text($update);
     }
     
