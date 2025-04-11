@@ -32,8 +32,14 @@ function perform_reply($update) {
     }
     break;
 
+
+    // следующий case будет улучшен в отдельной функции finish_reply()
+    // для реализации нескольких одновременных ответов от бота в разные чаты,
+    // например, в чат службы поддержки и пользователю.
+
     // если был этот запрос бота
     case ("Please describe your problem and I will forward your message."):
+    /*
         // Id чата, куда вернётся ответ
         $update->post_fields[0]->chat_id = CUSTOMER_SERVICE_ID;
         // Возвращаемый текст
@@ -42,7 +48,10 @@ function perform_reply($update) {
             $update->message->text.
             "\n\nIt was sent by\n\n".
             print_r($update->message->from, TRUE);
+    */
+        finish_reply($update);
     break;
+
 
   }
 }
