@@ -9,8 +9,12 @@ function perform_reply($update) {
 
   
   switch ($update->message->reply_to_message->text) {
+
+    /* Этот case выносится в функцию perform_text 
+       на фоне появления кнопок в боте*/
     // здесь идёт отслеживание ответа на команду /gethelp
     // если был этот запрос бота, то ищем ответ пользователя 
+    /*
     case ('What kind of help would you like? Type "tech", "billing", or "other".'):
     switch ($update->message->text) {
       case 'tech':
@@ -31,7 +35,7 @@ function perform_reply($update) {
         break;
     }
     break;
-
+    */
 
     // следующий case будет улучшен в отдельной функции finish_reply()
     // для реализации нескольких одновременных ответов от бота в разные чаты,

@@ -6,9 +6,22 @@ function perform_help($update) {
   $update->post_fields[0]->chat_id = $update->message->chat->id;
   // Возвращаемый текст
   $update->post_fields[0]->text = 'What kind of help would you like? Type "tech", "billing", or "other".';
-  // Возвращаемый текст будет возвращён как сообщение, требующее ответа
+
+  // Возвращаемый текст будет возвращён как сообщение, требующее ответа.
+  // Добавление массива клавиатуры.
+  $keyboard = [
+    [['text' => 'tech'], ['text' => 'billing']],
+    [['text' => 'other']],
+  ];
   $update->post_fields[0]->reply_markup = json_encode(array(
-    'force_reply' => TRUE,
+    'keyboard' => $keyboard,
+  // на фоне появления кнопок не требуется:
+  // 'force_reply' => TRUE,
+     
+     // скрытие клавиатуры после использования 
+     'one_time_keyboard' => true,
+     // уменьшил размер кнопок:
+     'resize_keyboard' => true
   ));
   
 }
