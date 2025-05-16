@@ -5,15 +5,8 @@ function perform_text($update) {
     // Chat Id
     $update->post_fields[0]->chat_id = $update->message->chat->id;
 
-
-    /* Эта часть будет заменена на case на фоне введения кнопок в бот
-    // Текст возвращаемого в чат сообщения
-    // - просто весь объект целиком
-    $update->post_fields[0]->text = print_r($update, TRUE);
-    */
-
-    // здесь идёт отслеживание ответа на команду /gethelp
-    // если был этот запрос бота, то ищем ответ пользователя 
+    // здесь отслеживается ответ пользователя после команды /gethelp
+    // и подготавливается ответ ему
     switch ($update->message->text) {
       case 'tech':
         $update->post_fields[0]->text = "Tech info here.";

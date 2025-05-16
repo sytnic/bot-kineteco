@@ -40,7 +40,6 @@ function route_requests($update) {
         perform_reply($update);
     // иначе    
     } else {
-        // выдать весь объект $update целиком
         perform_text($update);
     }
     
