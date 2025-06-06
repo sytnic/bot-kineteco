@@ -30,7 +30,7 @@ function perform_help($update) {
       ['text' => 'billing', 'url' => 'https://ya.ru']
     ],
     [
-      ['text' => 'other', 'url' => 'https://ya.ru']
+      ['text' => 'other', 'callback_data' => 'other']
     ]
   ];
 

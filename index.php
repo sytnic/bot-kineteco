@@ -7,6 +7,7 @@ include_once 'functions/bad_request.php';
 include_once 'functions/echo_input.php';
 include_once 'functions/finish_reply.php';
 include_once 'functions/forward_other.php';
+include_once 'functions/perform_callback.php';
 include_once 'functions/perform_help.php';
 include_once 'functions/perform_reply.php';
 include_once 'functions/perform_text.php';
