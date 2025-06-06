@@ -19,8 +19,14 @@ function echo_input($update) {
 
   // мои улучшения для команды "/echo" без параметров
   if (empty($update->parameters[0])) {
-    // если параметры (строка после /echo) пустые, то выдать всё
-    $update->post_fields[0]->text = print_r($update, TRUE);
+    // если параметры (строка после /echo) пустые, 
+
+    // то выдать всё
+    // $update->post_fields[0]->text = print_r($update, TRUE);
+
+    // выдать сообщение
+    $update->post_fields[0]->text = "Нужны параметры (слова) после /echo";
+
   } else {
     // иначе выдать только параметры (строку после /echo)
     $update->post_fields[0]->text = $update->parameters[0];
