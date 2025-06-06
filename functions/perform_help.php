@@ -17,22 +17,39 @@ function perform_help($update) {
   // Тип реакции.
 
   // Добавление массива клавиатуры.
-  $keyboard = [
+  /*$keyboard = [
     [['text' => 'tech'], ['text' => 'billing']],
     [['text' => 'other']],
   ];
-  
-  $update->post_fields[0]->reply_markup = json_encode(array(
-    'keyboard' => $keyboard,
+  */
 
-  // на фоне появления кнопок force_reply не требуется, 
-  // т.к. используется только один тип реакции из возможных
-  // 'force_reply' => TRUE,
+  // Добавление массива встроенных кнопок.
+  $keyboard = [
+    [
+      ['text' => 'tech', 'url' => 'https://ya.ru'], 
+      ['text' => 'billing', 'url' => 'https://ya.ru']
+    ],
+    [
+      ['text' => 'other', 'url' => 'https://ya.ru']
+    ]
+  ];
+
+  $update->post_fields[0]->reply_markup = json_encode(array(
+    /* Кнопки клавиатуры внизу экрана */
+    //  'keyboard' => $keyboard,
+
+    // на фоне появления кнопок force_reply не требуется, 
+    // т.к. используется только один тип реакции из возможных
+    // 'force_reply' => TRUE,
      
-     // скрытие клавиатуры после использования 
-     'one_time_keyboard' => true,
-     // уменьшил размер кнопок:
-     'resize_keyboard' => true
+    // скрытие клавиатуры после использования 
+    // 'one_time_keyboard' => true,
+    // уменьшил размер кнопок:
+    // 'resize_keyboard' => true
+
+    /* Встроенные кнопки (inline buttons) вместо клавиатуры*/
+      'inline_keyboard' => $keyboard
+
   ));
   
 }
