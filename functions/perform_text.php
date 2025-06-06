@@ -5,8 +5,9 @@ function perform_text($update) {
     // Chat Id
     $update->post_fields[0]->chat_id = $update->message->chat->id;
 
-    // здесь отслеживается ответ пользователя после команды /gethelp
-    // и подготавливается ответ ему
+    /* Здесь отслеживается ответ пользователя после команды /gethelp 
+       и подготавливается ответ ему.  */
+    /*
     switch ($update->message->text) {
       case 'tech':
         $update->post_fields[0]->text = "Tech info here.";
@@ -23,6 +24,16 @@ function perform_text($update) {
         break;
       default:
         $update->post_fields[0]->text = "I didn't understand that.";
+        break;
+    }
+    */
+
+    /* Упрощение функции после внедрения inline кнопок.
+       Теперь по кнопкам совершается переход по url и свой вызов по кнопке other. 
+    */
+    switch ($update->message->text) {
+      default:
+        bad_request($update);
         break;
     }
 
