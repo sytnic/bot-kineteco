@@ -42,6 +42,11 @@ function route_requests($update) {
         send_photo($update);
         break;
 
+      // запускаем функцию
+      case ('/location');
+        send_location($update);
+        break;
+
       default:
         bad_request($update);
         break;
