@@ -37,6 +37,11 @@ function route_requests($update) {
         perform_help($update);
         break;
 
+      // запускаем функцию
+      case ('/photo');
+        send_photo($update);
+        break;
+
       default:
         bad_request($update);
         break;

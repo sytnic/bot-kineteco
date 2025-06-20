@@ -11,6 +11,7 @@ include_once 'functions/perform_callback.php';
 include_once 'functions/perform_help.php';
 include_once 'functions/perform_reply.php';
 include_once 'functions/perform_text.php';
+include_once 'functions/send_photo.php';
 include_once 'functions/send_response.php';
 include_once 'functions/route_requests.php';
 include_once 'functions/whoami.php';
