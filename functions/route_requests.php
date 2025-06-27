@@ -28,24 +28,41 @@ function route_requests($update) {
         break;
 
       // зависит от того, идут ли строки после "/echo"
+    /*
       case ('/echo'):
         echo_input($update);
         break;
-
+    */
+    
       // запускаем функцию
       case ('/gethelp');
         perform_help($update);
         break;
 
       // запускаем функцию
-      case ('/photo');
-        send_photo($update);
+      case ('/help');
+        help_text($update);
         break;
 
       // запускаем функцию
+      case ('/start');
+        help_text($update);
+        break;
+    
+
+      // запускаем функцию
+    /*
+      case ('/photo');
+        send_photo($update);
+        break;
+    */
+
+      // запускаем функцию
+    /*
       case ('/location');
         send_location($update);
         break;
+    */
 
       default:
         bad_request($update);
