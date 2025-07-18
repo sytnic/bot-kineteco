@@ -15,6 +15,7 @@ include_once 'functions/perform_text.php';
 include_once 'functions/send_location.php';
 include_once 'functions/send_photo.php';
 include_once 'functions/send_response.php';
+include_once 'functions/start_text.php';
 include_once 'functions/route_requests.php';
 include_once 'functions/whoami.php';
 

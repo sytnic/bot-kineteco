@@ -1,12 +1,9 @@
-<?php 
-function send_photo($update) {
+<?php
+function start_text($update) {
     // Метод
     $update->method[0] = 'sendPhoto';
-    // Чат
+    // Чат получения
     $update->post_fields[0]->chat_id = $update->message->chat->id;
     // Фото
     $update->post_fields[0]->photo = COMPANY_LOGO;
-    $update->post_fields[0]->caption = 'Kineteco Logo';
 }
-
-

@@ -46,16 +46,15 @@ function route_requests($update) {
 
       // запускаем функцию
       case ('/start');
-        help_text($update);
+        start_text($update);
         break;
     
 
-      // запускаем функцию
-    /*
+      // запускаем функцию   
       case ('/photo');
         send_photo($update);
         break;
-    */
+    
 
       // запускаем функцию
     /*
