@@ -7,7 +7,7 @@ function send_response($update) {
     $curl = curl_init();
     curl_setopt_array($curl, array(
       CURLOPT_URL => "https://api.telegram.org/bot" . BOT_TOKEN . "/$method",
-      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_RETURNTRANSFER => true,  // участвует в дебаге
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
       CURLOPT_TIMEOUT => 0,
@@ -22,5 +22,16 @@ function send_response($update) {
     $response = curl_exec($curl);
     curl_close($curl);
     $i++;
+
+    // Debug
+    if ($update->debug === true) {
+        $update->debug = false;
+        $update->method[0] = 'sendMessage';
+        $update->post_fields[0]->chat_id = $update->message->chat->id;
+        $update->post_fields[0]->text = "BOT RESPONSE:\n" .
+          print_r(json_decode($response, true), true);
+        send_response($update);
+    }
+
   }
 }

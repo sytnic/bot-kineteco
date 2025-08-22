@@ -18,4 +18,6 @@ function whoami($update) {
     "Hello $firstname $lastname!
 Your username is $username and your user ID is $user_id.";
 
+    // $update->debug = true;
+    // С этой строчкой debug в чат отправляется подробный ответ в массиве со всеми полями
 }

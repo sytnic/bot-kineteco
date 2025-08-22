@@ -33,6 +33,9 @@ $update->post_fields = array();
 // Всегда будет по крайней мере один ответ
 $update->post_fields[0] = new \stdClass();
 
+// Debug
+$update->debug = false;
+
 // Do the thing
 // Основная функция, вызывает другие функции
 route_requests($update);
